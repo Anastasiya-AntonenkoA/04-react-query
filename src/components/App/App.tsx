@@ -20,7 +20,8 @@ export default function App() {
   queryKey: ["movies", query, page],
   queryFn: async (): Promise<MoviesResponse> => {
     return await fetchMovies({ query, page });
-  },
+    },
+  enabled: !!query,
   placeholderData: (prevData) => prevData,
 });
 
